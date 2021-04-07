@@ -29,12 +29,19 @@ a:hover {
     opacity: 1;
   }
 }
+.text-red {
+  color: #A62C1D;
+}
+
 .body {
   min-height: 100vh;
   background-color: #f8f9fa;
   position: relative;
 }
 
+.header .navbar {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 .header_banner {
   position: relative;
   height: 31rem;
@@ -93,6 +100,106 @@ a:hover {
   animation-duration: 5s;
   animation-name: animationOpacityToMax;
   animation-timing-function: ease-in-out;
+}
+
+.main .saveWithUs {
+  line-height: 1.75rem;
+  font-size: 1.125rem;
+}
+.main .saveWithUs .title {
+  font-size: 2.7rem;
+  font-family: serif;
+}
+.main .services_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media screen and (max-width: 1300px) {
+  .main .services_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .main .services_grid {
+    grid-template-columns: 1fr;
+  }
+}
+.main .services .card {
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0;
+}
+.main .services .card.c-light {
+  background: radial-gradient(circle, white 0%, #b7c2cb 100%);
+  color: #000;
+}
+.main .services .card.c-red {
+  background: radial-gradient(circle, #ac4d41 0%, #74180f 80%, #74180f 100%);
+}
+.main .services .card.c-blue {
+  background: radial-gradient(circle, #22526c 0%, #010a0e 100%);
+}
+.main .services .card.c-grey {
+  background: radial-gradient(circle, #b4bdc3 0%, #6f7274 80%, #6f7274 100%);
+}
+.main .services .card-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.main .services .card-text.text-uppercase {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.main .services .card-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+.main .video_wrap {
+  position: relative;
+}
+.main .video_wrap__placeholder {
+  z-index: 0;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  background-image: url("../img/100-years-of-shippingtmb.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+.main .video_wrap__placeholder p {
+  line-height: 1.75rem;
+  font-size: 1.125rem;
+}
+.main .video_wrap__placeholder h4 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.main .video_wrap iframe {
+  z-index: 3;
+  transition: 0.5s ease-in-out opacity;
+  border: 8px solid #fff;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  min-height: 500px;
+  background-color: #c4ae9f;
+}
+.main .video_wrap iframe.active {
+  opacity: 1;
+  position: relative;
 }
 
 /*# sourceMappingURL=index.css.map */

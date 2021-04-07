@@ -17,6 +17,12 @@
   animation-timing-function: ease-in-out;
 }
 
+.text {
+  &-red {
+    color: $red;
+  }
+}
+
 .body {
   min-height: 100vh;
   background-color: #f8f9fa;
@@ -24,6 +30,10 @@
 }
 
 .header {
+  .navbar {
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+  }
+
   &_banner {
     position: relative;
     height: 31rem;
@@ -71,6 +81,116 @@
         color: rgba(4,49,72,1);
         text-align: center;
         @include showAnimation(5);
+      }
+    }
+  }
+}
+
+.main {
+  .saveWithUs {
+    line-height: 1.75rem;
+    font-size: 1.125rem;
+    .title {
+      font-size: 2.7rem;
+      font-family: serif;
+    }
+  }
+
+  .services {
+    &_grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      @media screen and (max-width: 1300px){
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media screen and (max-width: 768px){
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      color: $white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 0;
+      &.c {
+        &-light {
+          background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(183, 194, 203) 100%);
+          color: $black;
+        }
+        &-red {
+          background: radial-gradient(circle, rgb(172, 77, 65) 0%, rgb(116, 24, 15) 80%, rgb(116, 24, 15) 100%);
+        }
+        &-blue {
+          background: radial-gradient(circle, rgb(34, 82, 108) 0%, rgb(1, 10, 14) 100%);
+        }
+        &-grey {
+          background: radial-gradient(circle, rgb(180, 189, 195) 0%, rgb(111, 114, 116) 80%, rgb(111, 114, 116) 100%);
+        }
+      }
+
+      &-text {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        &.text-uppercase {
+          font-size: .75rem;
+          line-height: 1rem;
+        }
+      }
+
+      &-title {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .video {
+    &_wrap {
+      position: relative;
+      &__placeholder {
+        z-index: 0;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        bottom: 8px;
+        left: 8px;
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+        background-image: url("../img/100-years-of-shippingtmb.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: $white;
+        p {
+          line-height: 1.75rem;
+          font-size: 1.125rem;
+        }
+        h4 {
+          font-size: 2.25rem;
+          line-height: 2.5rem;
+        }
+      }
+
+      iframe {
+        z-index: 3;
+        transition: .5s ease-in-out opacity;
+        border: 8px solid $white;
+        box-shadow: 0 0 1px 1px rgba(0,0,0,.6);
+        width: 100%;
+        min-height: 500px;
+        background-color: rgb(196,174,159);
+        &.active {
+          opacity: 1;
+          position: relative;
+        }
       }
     }
   }
